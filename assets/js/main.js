@@ -27,7 +27,7 @@ function decode(str) {
 }
 
 function putInDom(phrase) {
-  resultContent.innerHTML = "";
+  resultContent.innerHTML = '';
   for (let i = 0; i < phrase.length; i++) {
     let newPara = document.createElement('p');
     newPara.innerHTML = phrase[i];
