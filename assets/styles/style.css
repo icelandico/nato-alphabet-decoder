@@ -2,40 +2,33 @@
     box-sizing: border-box;
 }
 
-body,
-html {
-    height: 100%;
+body {
+    min-height: 100vh;
     background: #5cdb95;
     color: #ecf0f1;
     font-family: "Birch Std";
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper {
-    min-height: 100vh;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
-.item {
-    flex-grow: 1;
-    width: 100%;
 }
 
 .top-banner {
     text-align: center;
     font-size: 3rem;
-    margin: 3% auto;
 }
 
 .menu {
+    height: 100px;
     background: #379683;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .menu--buttons {
@@ -90,8 +83,11 @@ html {
 }
 
 .footer {
+    position: relative;
+    bottom: 0;
     background: chocolate;
     font-size: 2rem;
+    width: 100%;
 }
 
 
