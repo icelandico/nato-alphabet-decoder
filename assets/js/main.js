@@ -8,15 +8,15 @@ buttonSearch.addEventListener('click', function() {
 });
 
 searchValue.addEventListener('keydown', function(e) {
-  let inputValue = searchValue.value;
   if (e.key === 'Enter') {
-    decode(inputValue)
+    decode()
   }
 });
 
-function decode(str) {
-  str = str.toUpperCase().split("").filter(x => x.match(/[\S]/));
-  let result = (str.map(function (x) {
+function decode() {
+  let inputValue = searchValue.value;
+  inputValue = inputValue.toUpperCase().split("").filter(x => x.match(/[\S]/));
+  let result = (inputValue.map(function (x) {
     if (x in alphabet) {
       return alphabet[x]
     } else {
@@ -34,4 +34,5 @@ function putInDom(phrase) {
     resultContent.appendChild(newPara)
   }
 }
+
 
