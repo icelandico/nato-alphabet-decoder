@@ -16,13 +16,8 @@ searchValue.addEventListener('keydown', function(e) {
 function decode() {
   let inputValue = searchValue.value;
   inputValue = inputValue.toUpperCase().split("").filter(x => x.match(/[\S]/));
-  let result = (inputValue.map(function (x) {
-    if (x in alphabet) {
-      return alphabet[x]
-    } else {
-      return x;
-    }
-  }));
+  let result = (inputValue.map(letter => letter in alphabet ? alphabet[letter] : letter));
+
   putInDom(result)
 }
 
@@ -34,5 +29,6 @@ function putInDom(phrase) {
     resultContent.appendChild(newPara)
   }
 }
+
 
 
