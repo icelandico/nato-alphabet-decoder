@@ -64,14 +64,16 @@ body {
 }
 
 .menu--input {
-    margin: 5% auto;
+    margin: 2% 0 auto;
     border: 5px solid #05386b;
     padding: 15px;
     width: 75%;
 }
 
 .content {
+    margin: 2% auto;
     text-align: center;
+    max-width: 30%;
     background: #8EE4AF;
 }
 
@@ -79,7 +81,8 @@ body {
     font-size: 4rem;
     margin: 1%;
     letter-spacing: 10px;
-    padding: 0;
+    padding: 25px;
+    text-align: left;
 }
 
 .footer {
