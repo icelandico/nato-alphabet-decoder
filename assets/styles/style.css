@@ -61,14 +61,6 @@ body {
     font-size: 2em;
 }
 
-.button--get {
-    display: none;
-}
-
-.show {
-    display: flex;
-}
-
 .menu-searchbar {
     margin: 2% auto;
     text-align: center;
@@ -147,10 +139,27 @@ input:-webkit-autofill {
     position: relative;
     bottom: 0;
     background: chocolate;
-    font-size: 2rem;
     width: 100%;
-
 }
+
+.footer-header {
+    margin: 1%;
+    text-align: center;
+    color: #05386b;
+    font-size: 1.5em;
+}
+
+.footer-icons {
+    text-align: center;
+}
+
+a {
+    color: #05386b;
+    margin: 5%;
+    font-size: 2rem;
+}
+
+
 
 @media screen and (min-width: 968px) {
     .button {
