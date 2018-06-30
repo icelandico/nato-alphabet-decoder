@@ -96,7 +96,7 @@ body {
     border-left: 3px solid #05386b;
     background: #5cdb95;
     color: #05386b;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 ::-webkit-input-placeholder {
@@ -119,20 +119,23 @@ input:-webkit-autofill {
 }
 
 .content {
-    margin: 2% auto;
-    text-align: center;
-    background: #8EE4AF;
     width: auto;
     white-space: nowrap;
+    margin: 0 auto;
 }
 
 .content p {
     font-size: 2rem;
-    margin: 1%;
     letter-spacing: 10px;
-    padding: 15px 30px;
-    text-align: left;
+    padding: 15px 0;
     color: #05386b;
+    animation: fadeIn 1s;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0}
+    to { opacity: 1}
 }
 
 .content p:first-letter {
