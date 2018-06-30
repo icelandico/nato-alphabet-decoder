@@ -1,16 +1,22 @@
 * {
     box-sizing: border-box;
+    font-family: "Swis721 LtEx BT", sans-serif;
+}
+
+html {
+    height: 100vh;
 }
 
 body {
     min-height: 100vh;
     background: #5cdb95;
     color: #05386b;
-    font-family: "Birch Std", sans-serif;
     font-size: 12px;
     display: flex;
     flex-direction: column;
     letter-spacing: 10px;
+    overflow: auto;
+    line-height: unset;
 }
 
 .wrapper {
@@ -23,6 +29,7 @@ body {
     margin: 2% auto;
     text-align: center;
     font-size: 2rem;
+    font-family: "Swis721 LtEx BT", sans-serif;
 }
 
 .menu {
@@ -50,7 +57,6 @@ body {
     margin: 1%;
     background: #05386b;
     color: #ecf0f1;
-    font-family: "Birch Std", sans-serif;
     letter-spacing: 5px; ;
     font-size: 2em;
 }
@@ -140,6 +146,7 @@ input:-webkit-autofill {
     background: chocolate;
     font-size: 2rem;
     width: 100%;
+
 }
 
 @media screen and (min-width: 968px) {
