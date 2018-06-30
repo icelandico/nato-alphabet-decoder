@@ -2,6 +2,7 @@ const buttonSearch = document.querySelector('.button--get');
 const searchBar = document.querySelector('.menu-searchbar');
 const searchValue = document.querySelector('.menu--input');
 const resultContent = document.querySelector('.content');
+let inputValue;
 
 buttonSearch.addEventListener('click', function() {
   searchBar.classList.toggle('show')
@@ -14,7 +15,7 @@ searchValue.addEventListener('keydown', function(e) {
 });
 
 function decode() {
-  let inputValue = searchValue.value;
+  inputValue = searchValue.value;
   inputValue = inputValue.toUpperCase().split("").filter(x => x.match(/[\S]/));
   let result = (inputValue.map(letter => letter in alphabet ? alphabet[letter] : letter));
 

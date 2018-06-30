@@ -50,9 +50,8 @@ body {
     margin: 1%;
     background: #05386b;
     color: #ecf0f1;
-    font-family: "Birch Std";
+    font-family: "Birch Std", sans-serif;
     letter-spacing: 5px; ;
-    font-weight: 500;
     font-size: 2em;
 }
 
@@ -71,13 +70,13 @@ body {
 }
 
 .menu--input {
-    margin: 2% 0 auto;
+    margin: 2% auto;
     border: 5px solid #05386b;
     padding: 15px;
     width: 75%;
     background: #379683;
     color: #ecf0f1;
-    transition: 0.5s ease-in-out;
+    text-transform: uppercase;
 }
 
 ::-webkit-input-placeholder {
@@ -116,7 +115,11 @@ body {
 
 @media screen and (min-width: 968px) {
     .button {
-        max-width: 30%;
+        max-width: 35%;
+    }
+
+    .menu--input {
+        width: calc(75% - 3%);
     }
 }
 
