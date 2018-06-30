@@ -1,18 +1,17 @@
-const buttonSearch = document.querySelector('.button--get');
-const searchBar = document.querySelector('.menu-searchbar');
-const searchValue = document.querySelector('.menu--input');
+const searchValue = document.querySelector('.menu--value');
+const searchButton = document.querySelector('.menu--search--button');
+const clearButton = document.querySelector('.menu--clear--button');
 const resultContent = document.querySelector('.content');
 let inputValue;
 
-buttonSearch.addEventListener('click', function() {
-  searchBar.classList.toggle('show')
-});
-
-searchValue.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
+searchButton.addEventListener('click', decode);
+searchValue.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
     decode()
   }
 });
+
+clearButton.addEventListener('click', clearInput);
 
 function decode() {
   inputValue = searchValue.value;
@@ -31,5 +30,6 @@ function putInDom(phrase) {
   }
 }
 
-
-
+function clearInput() {
+  searchValue.value = '';
+}
