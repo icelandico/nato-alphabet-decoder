@@ -26,7 +26,7 @@ body {
 }
 
 .top-banner {
-    margin: 2% auto;
+    margin: 1% auto;
     text-align: center;
     font-size: 2rem;
     font-family: "Swis721 LtEx BT", sans-serif;
@@ -54,6 +54,7 @@ body {
     width: 75%;
     text-align: center;
     border-radius: 5px;
+    border: none;
     margin: 1%;
     background: #05386b;
     color: #ecf0f1;
@@ -140,35 +141,40 @@ input:-webkit-autofill {
     bottom: 0;
     background: chocolate;
     width: 100%;
+    padding: 15px;
+}
+.footer-item {
+    float: left;
+    min-width: 40%;
 }
 
 .footer-header {
-    margin: 1%;
-    text-align: center;
     color: #05386b;
-    font-size: 1.5em;
+    font-size: 1em;
+    font-weight: 700;
 }
 
 .footer-icons {
     text-align: center;
+    float: right;
+    font-size: 1rem;
 }
 
 a {
+    display: block;
+    float: left;
     color: #05386b;
-    margin: 5%;
-    font-size: 2rem;
+    min-width: 15%;
 }
 
-
+span:hover {
+    transform: scale(1.3);
+}
 
 @media screen and (min-width: 968px) {
     .button {
         max-width: 35%;
     }
-
-    /*.menu--input {*/
-        /*width: calc(75% - 3%);*/
-    /*}*/
 }
 
 
