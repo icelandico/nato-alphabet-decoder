@@ -8,35 +8,52 @@ const fullListDiv = document.querySelector('.full-codes-list');
 const searchBarDiv = document.querySelector('.menu-searchbar');
 const aboutDiv = document.querySelector('.about');
 const fullCodeListTable = document.querySelector('.table-codes');
+const menuButtons = document.querySelectorAll('.button');
 let inputValue;
 let result;
 let counter = 0;
 let wordInsert;
 
+// Input Buttons
+
+clearButton.addEventListener('click', clearInput);
 searchButton.addEventListener('click', function() {
   clearResult();
   decode();
   intervalAppend();
 });
 
-clearButton.addEventListener('click', clearInput);
 searchValue.addEventListener('keydown', function(event) {
   enterSearch(event.key)
 });
 
-fullListButton.addEventListener('click', switchContent);
-aboutButton.addEventListener('click', switchAboutContent);
+// Menu Buttons
 
-function switchAboutContent() {
-  aboutButton.innerHTML === 'About' ? aboutButton.innerHTML ='Go to search' : aboutButton.innerHTML = 'About';
-  searchBarDiv.classList.toggle('hidden');
-  clearResult();
-  clearContent();
-  aboutDiv.classList.toggle('hidden');
-}
+// fullListButton.addEventListener('click', switchContent);
+// aboutButton.addEventListener('click', switchAboutContent);
 
-function switchContent() {
-  fullListButton.innerHTML === 'Full codes list' ? fullListButton.innerHTML ='Go to search' : fullListButton.innerHTML = 'Full codes list';
+
+Array.from(menuButtons).forEach(function (element) {
+  element.addEventListener('click', function(event) {
+    switchContent(event.target, event.target.innerHTML)
+  })
+});
+
+// function switchAboutContent() {
+//   aboutButton.innerHTML === 'About' ? aboutButton.innerHTML ='Go to search' : aboutButton.innerHTML = 'About';
+//   searchBarDiv.classList.toggle('hidden');
+//   clearResult();
+//   clearContent();
+//   aboutDiv.classList.toggle('hidden');
+// }
+
+function switchContent(target, content) {
+  let originContent = content;
+  if (target.innerHTML === 'Full codes list' || target.innerHTML === 'About') {
+    target.innerHTML = 'Go to search'
+  } else {
+    target.innerHTML = content;
+  }
   searchBarDiv.classList.toggle('hidden');
   clearResult();
   generateList();

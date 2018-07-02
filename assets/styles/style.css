@@ -69,11 +69,6 @@ body {
     display: none;
 }
 
-.menu-searchbar {
-    margin: 2% auto;
-    text-align: center;
-}
-
 .menu-searchbar:focus {
     outline: 0;
 }
@@ -133,6 +128,10 @@ button:focus, input:focus {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #5cdb95 inset;
+}
+
+.active-content {
+    margin: 2% auto;
 }
 
 .content,
