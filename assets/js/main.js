@@ -1,10 +1,12 @@
-const searchValue = document.querySelector('.menu--value');
-const searchButton = document.querySelector('.menu--search--button');
 const clearButton = document.querySelector('.menu--clear--button');
-const resultContent = document.querySelector('.content');
 const fullListButton = document.querySelector('.button--full-list');
+const searchButton = document.querySelector('.menu--search--button');
+const aboutButton = document.querySelector('.button--about');
+const searchValue = document.querySelector('.menu--value');
+const resultContent = document.querySelector('.content');
 const fullListDiv = document.querySelector('.full-codes-list');
-const searchbarDiv = document.querySelector('.menu-searchbar');
+const searchBarDiv = document.querySelector('.menu-searchbar');
+const aboutDiv = document.querySelector('.about');
 const fullCodeListTable = document.querySelector('.table-codes');
 let inputValue;
 let result;
@@ -23,10 +25,18 @@ searchValue.addEventListener('keydown', function(event) {
 });
 
 fullListButton.addEventListener('click', switchContent);
+aboutButton.addEventListener('click', switchAboutContent);
+
+function switchAboutContent() {
+  aboutButton.innerHTML === 'About' ? aboutButton.innerHTML ='Go to search' : aboutButton.innerHTML = 'About';
+  searchBarDiv.classList.toggle('hidden');
+  clearResult();
+  aboutDiv.classList.toggle('hidden');
+}
 
 function switchContent() {
   fullListButton.innerHTML === 'Full codes list' ? fullListButton.innerHTML ='Go to search' : fullListButton.innerHTML = 'Full codes list';
-  searchbarDiv.classList.toggle('hidden');
+  searchBarDiv.classList.toggle('hidden');
   clearResult();
   generateList();
   fullListDiv.classList.toggle('hidden');

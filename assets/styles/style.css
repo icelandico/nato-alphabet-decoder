@@ -91,6 +91,23 @@ body {
     position: relative;
 }
 
+.about {
+    text-align: center;
+    margin: 5%;
+}
+
+.about p {
+    display: inline;
+    letter-spacing: normal;
+    font-size: 2rem;
+}
+
+.about a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #379683;
+}
+
 .menu--value {
     text-transform: uppercase;
     border-left: 3px solid #05386b;
@@ -155,6 +172,10 @@ th:first-child {
     padding: 0 15px;
 }
 
+.content p {
+    font-size: 2rem;
+}
+
 @keyframes fadeIn {
     from { opacity: 0}
     to { opacity: 1}
@@ -194,7 +215,7 @@ th:first-child {
     transform: translate(0, -50%);
 }
 
-a {
+.footer-icon {
     float: right;
     display: inline-block;
     color: #05386b;
