@@ -70,7 +70,7 @@ function generateList() {
   clearContent();
   for (key in alphabet) {
     let newCodeParagraph = document.createElement('p');
-    newCodeParagraph.innerHTML = key;
+    newCodeParagraph.innerHTML = key + " - " + alphabet[key];
     fullListDiv.appendChild(newCodeParagraph)
   }
 }

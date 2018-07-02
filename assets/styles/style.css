@@ -179,7 +179,7 @@ a {
     width: 15%;
 }
 
-span:hover {
+a span:hover {
     transform: scale(1.3);
 }
 
