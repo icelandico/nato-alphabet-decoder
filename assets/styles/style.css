@@ -127,13 +127,18 @@ input:-webkit-autofill {
 }
 
 .content p,
-.full-codes-list p {
+.full-codes-list tr {
     font-size: 2rem;
     letter-spacing: 10px;
     padding: 15px 0;
     color: #05386b;
     animation: fadeIn 1s;
     text-align: left;
+}
+
+td:first-child {
+    text-align: center;
+    padding: 2%;
 }
 
 @keyframes fadeIn {

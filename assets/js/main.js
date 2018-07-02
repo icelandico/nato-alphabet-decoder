@@ -5,6 +5,7 @@ const resultContent = document.querySelector('.content');
 const fullListButton = document.querySelector('.button--full-list');
 const fullListDiv = document.querySelector('.full-codes-list');
 const searchbarDiv = document.querySelector('.menu-searchbar');
+const fullCodeListTable = document.querySelector('.table-codes');
 let inputValue;
 let result;
 let counter = 0;
@@ -68,15 +69,28 @@ function clearResult() {
 
 function generateList() {
   clearContent();
+  let newTableRowHeader = document.createElement('tr');
+  let newTableHeader1 = document.createElement('th');
+  let newTableHeader2 = document.createElement('th');
+  newTableHeader1.innerHTML = 'Character';
+  newTableHeader2.innerHTML = 'Code';
+  newTableRowHeader.appendChild(newTableHeader1);
+  newTableRowHeader.appendChild(newTableHeader2);
+  fullCodeListTable.appendChild(newTableRowHeader);
   for (key in alphabet) {
-    let newCodeParagraph = document.createElement('p');
-    newCodeParagraph.innerHTML = key + " - " + alphabet[key];
-    fullListDiv.appendChild(newCodeParagraph)
+    let newCodeRow = document.createElement('tr');
+    let newRowDataChar = document.createElement('td');
+    let newRowDataCode = document.createElement('td');
+    newRowDataChar.innerHTML = key;
+    newRowDataCode.innerHTML = alphabet[key];
+    newCodeRow.appendChild(newRowDataChar);
+    newCodeRow.appendChild(newRowDataCode);
+    fullCodeListTable.appendChild(newCodeRow)
   }
 }
 
 function clearContent() {
-  while (fullListDiv.firstChild) {
-    fullListDiv.removeChild(fullListDiv.firstChild);
+  while (fullCodeListTable.firstChild) {
+    fullCodeListTable.removeChild(fullCodeListTable.firstChild);
   }
 }
