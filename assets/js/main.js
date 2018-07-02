@@ -72,7 +72,7 @@ function generateList() {
   let newTableRowHeader = document.createElement('tr');
   let newTableHeader1 = document.createElement('th');
   let newTableHeader2 = document.createElement('th');
-  newTableHeader1.innerHTML = 'Character';
+  newTableHeader1.innerHTML = 'Symbol';
   newTableHeader2.innerHTML = 'Code';
   newTableRowHeader.appendChild(newTableHeader1);
   newTableRowHeader.appendChild(newTableHeader2);
