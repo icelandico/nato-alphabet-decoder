@@ -80,5 +80,3 @@ function clearContent() {
     fullListDiv.removeChild(fullListDiv.firstChild);
   }
 }
-
-
