@@ -160,14 +160,19 @@ input:-webkit-autofill {
 
 .footer-header {
     color: #05386b;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 700;
     float: left;
+    line-height: 2rem;
 }
 
 .footer-icons {
     float: right;
     font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
 }
 
 a {
