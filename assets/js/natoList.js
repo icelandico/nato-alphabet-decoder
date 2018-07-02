@@ -1,4 +1,4 @@
-let alphabet = {
+const alphabet = {
   "A": "Alfa",
   "B": "Bravo",
   "C": "Charlie",
@@ -24,5 +24,15 @@ let alphabet = {
   "W": "Whiskey",
   "X": "Xray",
   "Y": "Yankee",
-  "Z": "Zulu"
+  "Z": "Zulu",
+  1: "One",
+  2: "Two",
+  3: "Three",
+  4: "Four (Fower)",
+  5: "Five",
+  6: "Six",
+  7: "Seven",
+  8: "Eight",
+  9: "Nine (Niner)",
+  0: "Zero"
 };

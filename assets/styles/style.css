@@ -60,6 +60,13 @@ body {
     color: #ecf0f1;
     letter-spacing: 5px; ;
     font-size: 2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none;
 }
 
 .menu-searchbar {
@@ -117,13 +124,18 @@ input:-webkit-autofill {
     margin: 0 auto;
 }
 
-.content p {
+.content p,
+.full-codes-list p {
     font-size: 2rem;
     letter-spacing: 10px;
     padding: 15px 0;
     color: #05386b;
     animation: fadeIn 1s;
     text-align: left;
+}
+
+.full-codes-list p {
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -139,32 +151,32 @@ input:-webkit-autofill {
 .footer {
     position: relative;
     bottom: 0;
-    background: chocolate;
+    background: #379683;
     width: 100%;
     padding: 15px;
 }
+
 .footer-item {
-    float: left;
-    min-width: 40%;
+    width: 50%;
 }
 
 .footer-header {
     color: #05386b;
     font-size: 1em;
     font-weight: 700;
+    float: left;
 }
 
 .footer-icons {
-    text-align: center;
     float: right;
     font-size: 1rem;
 }
 
 a {
-    display: block;
-    float: left;
+    float: right;
+    display: inline-block;
     color: #05386b;
-    min-width: 15%;
+    width: 15%;
 }
 
 span:hover {
@@ -176,9 +188,3 @@ span:hover {
         max-width: 35%;
     }
 }
-
-
-
-
-
-
