@@ -147,6 +147,10 @@ th {
     letter-spacing: normal;
 }
 
+tr:nth-child(2n) {
+    background: #379683;
+}
+
 th:first-child {
     padding: 0 15px;
 }
