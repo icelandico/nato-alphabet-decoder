@@ -31,6 +31,7 @@ function switchAboutContent() {
   aboutButton.innerHTML === 'About' ? aboutButton.innerHTML ='Go to search' : aboutButton.innerHTML = 'About';
   searchBarDiv.classList.toggle('hidden');
   clearResult();
+  clearContent();
   aboutDiv.classList.toggle('hidden');
 }
 
