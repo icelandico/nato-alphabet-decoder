@@ -2,12 +2,14 @@ const clearButton = document.querySelector('.menu--clear--button');
 const fullListButton = document.querySelector('.button--full-list');
 const searchButton = document.querySelector('.menu--search--button');
 const aboutButton = document.querySelector('.button--about');
+const searchMenuButton = document.querySelector('.button--search-bar');
 const searchValue = document.querySelector('.menu--value');
-const resultContent = document.querySelector('.content');
+const resultDiv = document.querySelector('.result');
 const fullListDiv = document.querySelector('.full-codes-list');
 const searchBarDiv = document.querySelector('.menu-searchbar');
 const aboutDiv = document.querySelector('.about');
 const fullCodeListTable = document.querySelector('.table-codes');
+const contentDivs = document.querySelectorAll('.content');
 const menuButtons = document.querySelectorAll('.button');
 let inputValue;
 let result;
@@ -29,35 +31,21 @@ searchValue.addEventListener('keydown', function(event) {
 
 // Menu Buttons
 
-// fullListButton.addEventListener('click', switchContent);
-// aboutButton.addEventListener('click', switchAboutContent);
-
-
-Array.from(menuButtons).forEach(function (element) {
-  element.addEventListener('click', function(event) {
-    switchContent(event.target, event.target.innerHTML)
+Array.from(menuButtons).forEach(function(button) {
+  button.addEventListener('click', function(e) {
+    hideAndShowNextButton(e.target)
   })
 });
 
-// function switchAboutContent() {
-//   aboutButton.innerHTML === 'About' ? aboutButton.innerHTML ='Go to search' : aboutButton.innerHTML = 'About';
-//   searchBarDiv.classList.toggle('hidden');
-//   clearResult();
-//   clearContent();
-//   aboutDiv.classList.toggle('hidden');
-// }
+// fullListButton.addEventListener('click', showList);
+// searchMenuButton.addEventListener('click', showSearch);
 
-function switchContent(target, content) {
-  let originContent = content;
-  if (target.innerHTML === 'Full codes list' || target.innerHTML === 'About') {
-    target.innerHTML = 'Go to search'
-  } else {
-    target.innerHTML = content;
-  }
-  searchBarDiv.classList.toggle('hidden');
+function showSearch()  {
+  fullListDiv.classList.toggle('hidden');
+  aboutDiv.classList.toggle('hidden');
   clearResult();
   generateList();
-  fullListDiv.classList.toggle('hidden');
+  searchBarDiv.classList.toggle('hidden');
 }
 
 function decode() {
@@ -69,7 +57,7 @@ function decode() {
 function putInDom() {
   let newParagraph = document.createElement('p');
   newParagraph.innerHTML = result[counter];
-  resultContent.appendChild(newParagraph);
+  resultDiv.appendChild(newParagraph);
   counter < result.length - 1 ? counter ++ : clearInterval(wordInsert)
 }
 
@@ -91,7 +79,7 @@ function intervalAppend() {
 
 function clearResult() {
   counter = 0;
-  resultContent.innerHTML = '';
+  resultDiv.innerHTML = '';
   result = [];
 }
 
@@ -122,3 +110,13 @@ function clearContent() {
     fullCodeListTable.removeChild(fullCodeListTable.firstChild);
   }
 }
+
+function hideAndShowNextButton(element) {
+  Array.from(menuButtons).forEach(function(button) {
+    if (button.classList.contains('hidden')) {
+      button.classList.remove('hidden')
+    }
+    element.classList.add('hidden');
+  })
+}
+

@@ -134,7 +134,7 @@ input:-webkit-autofill {
     margin: 2% auto;
 }
 
-.content,
+.result,
 .full-codes-list {
     width: auto;
     white-space: nowrap;
@@ -142,7 +142,7 @@ input:-webkit-autofill {
     text-align: center;
 }
 
-.content p,
+.result p,
 .full-codes-list tr {
     font-size: 1rem;
     letter-spacing: 5px;
@@ -171,7 +171,7 @@ th:first-child {
     padding: 0 15px;
 }
 
-.content p {
+.result p {
     font-size: 2rem;
 }
 
@@ -180,7 +180,7 @@ th:first-child {
     to { opacity: 1}
 }
 
-.content p:first-letter {
+.result p:first-letter {
     font-weight: 900;
     color: #05386b;
 }
