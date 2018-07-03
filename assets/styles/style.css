@@ -199,10 +199,11 @@ th:first-child {
 
 .footer-header {
     color: #05386b;
-    font-size: 1rem;
+    font-size: 8px;
     font-weight: 700;
     float: left;
     line-height: 2rem;
+    letter-spacing: 2px;
 }
 
 .footer-icons {
@@ -228,5 +229,11 @@ a span:hover {
 @media screen and (min-width: 968px) {
     .button {
         max-width: 35%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer-header {
+        font-size: 12px;
     }
 }
