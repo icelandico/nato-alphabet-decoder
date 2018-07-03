@@ -28,7 +28,7 @@ searchValue.addEventListener('keydown', function(event) {
 menuButtons.forEach(function(button) {
   button.addEventListener('click', function(e) {
     let clickedIndex = menuButtons.indexOf(e.target);
-    console.log(clickedIndex);
+    clearResult();
     hideAndShowNextButton(e.target);
     clearDivs();
     showProperDiv(clickedIndex);
