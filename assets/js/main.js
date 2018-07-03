@@ -9,8 +9,8 @@ const fullListDiv = document.querySelector('.full-codes-list');
 const searchBarDiv = document.querySelector('.menu-searchbar');
 const aboutDiv = document.querySelector('.about');
 const fullCodeListTable = document.querySelector('.table-codes');
-const contentDivs = document.querySelectorAll('.content');
-const menuButtons = document.querySelectorAll('.button');
+const contentDivs = Array.from(document.querySelectorAll('.content'));
+const menuButtons = Array.from(document.querySelectorAll('.button'));
 let inputValue;
 let result;
 let counter = 0;
@@ -31,22 +31,18 @@ searchValue.addEventListener('keydown', function(event) {
 
 // Menu Buttons
 
-Array.from(menuButtons).forEach(function(button) {
+menuButtons.forEach(function(button) {
   button.addEventListener('click', function(e) {
-    hideAndShowNextButton(e.target)
+    let clickedIndex = menuButtons.indexOf(e.target);
+    console.log(clickedIndex);
+    hideAndShowNextButton(e.target);
+    clearDivs();
+    showProperDiv(clickedIndex);
   })
 });
 
 // fullListButton.addEventListener('click', showList);
 // searchMenuButton.addEventListener('click', showSearch);
-
-function showSearch()  {
-  fullListDiv.classList.toggle('hidden');
-  aboutDiv.classList.toggle('hidden');
-  clearResult();
-  generateList();
-  searchBarDiv.classList.toggle('hidden');
-}
 
 function decode() {
   inputValue = searchValue.value;
@@ -112,11 +108,21 @@ function clearContent() {
 }
 
 function hideAndShowNextButton(element) {
-  Array.from(menuButtons).forEach(function(button) {
+  menuButtons.forEach(function(button) {
     if (button.classList.contains('hidden')) {
       button.classList.remove('hidden')
     }
     element.classList.add('hidden');
   })
+}
+
+function clearDivs() {
+  contentDivs.forEach(function(div) {
+    div.classList.add('hidden')
+  })
+}
+
+function showProperDiv(index) {
+  contentDivs[index].classList.remove('hidden')
 }
 
