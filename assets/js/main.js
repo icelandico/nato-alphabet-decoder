@@ -1,13 +1,7 @@
 const clearButton = document.querySelector('.menu--clear--button');
-const fullListButton = document.querySelector('.button--full-list');
 const searchButton = document.querySelector('.menu--search--button');
-const aboutButton = document.querySelector('.button--about');
-const searchMenuButton = document.querySelector('.button--search-bar');
 const searchValue = document.querySelector('.menu--value');
 const resultDiv = document.querySelector('.result');
-const fullListDiv = document.querySelector('.full-codes-list');
-const searchBarDiv = document.querySelector('.menu-searchbar');
-const aboutDiv = document.querySelector('.about');
 const fullCodeListTable = document.querySelector('.table-codes');
 const contentDivs = Array.from(document.querySelectorAll('.content'));
 const menuButtons = Array.from(document.querySelectorAll('.button'));
@@ -40,9 +34,6 @@ menuButtons.forEach(function(button) {
     showProperDiv(clickedIndex);
   })
 });
-
-// fullListButton.addEventListener('click', showList);
-// searchMenuButton.addEventListener('click', showSearch);
 
 function decode() {
   inputValue = searchValue.value;
@@ -125,4 +116,3 @@ function clearDivs() {
 function showProperDiv(index) {
   contentDivs[index].classList.remove('hidden')
 }
-

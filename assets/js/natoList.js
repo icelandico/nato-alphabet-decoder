@@ -36,3 +36,5 @@ const alphabet = {
   9: "Nine (Niner)",
   0: "Zero"
 };
+
+generateList();
