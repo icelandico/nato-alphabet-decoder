@@ -16,7 +16,7 @@ clearButton.addEventListener('click', clearInput);
 searchButton.addEventListener('click', function() {
   clearResult();
   decode();
-  intervalAppend();
+  putInDom();
 });
 
 searchValue.addEventListener('keydown', function(event) {
@@ -35,6 +35,14 @@ menuButtons.forEach(function(button) {
   })
 });
 
+function enterSearch(event) {
+  if (event === 'Enter') {
+    clearResult();
+    decode();
+    putInDom();
+  }
+}
+
 function decode() {
   inputValue = searchValue.value;
   inputValue = inputValue.toUpperCase().split("").filter(character => character.match(/[\S]/));
@@ -42,26 +50,25 @@ function decode() {
 }
 
 function putInDom() {
-  let newParagraph = document.createElement('p');
-  newParagraph.innerHTML = result[counter];
-  resultDiv.appendChild(newParagraph);
-  counter < result.length - 1 ? counter ++ : clearInterval(wordInsert)
+  result.forEach(function (word) {
+    let newParagraph = document.createElement('p');
+    newParagraph.innerHTML = word;
+    newParagraph.classList.add('unvisible');
+    resultDiv.appendChild(newParagraph);
+  });
+  showAllWords();
 }
 
 function clearInput() {
   searchValue.value = '';
 }
 
-function enterSearch(event) {
-  if (event === 'Enter') {
-    clearResult();
-    decode();
-    intervalAppend();
-  }
-}
-
-function intervalAppend() {
-  wordInsert = setInterval(putInDom, 500)
+function showAllWords() {
+  const newParagraphs = Array.from(document.querySelectorAll('p.unvisible'));
+  wordInsert = setInterval(function() {
+    newParagraphs[counter].classList.remove('unvisible');
+    counter < newParagraphs.length - 1 ? counter++ : clearInterval(wordInsert)
+  }, 350)
 }
 
 function clearResult() {
@@ -116,3 +123,4 @@ function clearDivs() {
 function showProperDiv(index) {
   contentDivs[index].classList.remove('hidden')
 }
+

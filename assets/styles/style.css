@@ -69,6 +69,7 @@ body {
     display: none;
 }
 
+
 .menu-searchbar:focus {
     outline: 0;
 }
@@ -139,7 +140,12 @@ input:-webkit-autofill {
     width: auto;
     white-space: nowrap;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+}
+
+.unvisible {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .result p,
@@ -148,9 +154,11 @@ input:-webkit-autofill {
     letter-spacing: 5px;
     padding: 15px 0;
     color: #05386b;
-    animation: fadeIn 1s;
+    transition: visibility 1s linear;
     text-align: left;
+    visibility: visible;
 }
+
 
 td:first-child {
     text-align: center;
@@ -173,11 +181,6 @@ th:first-child {
 
 .result p {
     font-size: 2rem;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0}
-    to { opacity: 1}
 }
 
 .result p:first-letter {
